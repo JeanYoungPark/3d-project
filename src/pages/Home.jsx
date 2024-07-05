@@ -17,7 +17,7 @@ const Home = () => {
         let screenPosition = [0, -6.5, -43];
         let rotation = [0.1, 4.7, 0];
 
-        if (window.innerWidth > 768) {
+        if (window.innerWidth < 768) {
             screenScale = [0.9, 0.9, 0.9];
         } else {
             screenScale = [1, 1, 1];
@@ -29,7 +29,7 @@ const Home = () => {
     const adjustPlaneForScreenSize = () => {
         let screenScale, screenPosition;
 
-        if (window.innerWidth > 768) {
+        if (window.innerWidth < 768) {
             screenScale = [1.5, 1.5, 1.5];
             screenPosition = [0, -1.5, 0];
         } else {
@@ -64,7 +64,7 @@ const Home = () => {
                         isRotating={isRotating}
                         setIsRotating={setIsRotating}
                     />
-                    <Plain isRotating={isRotating} plainScale={plainScale} plainPosition={plainPosition} rotation={[0, 20, 0]} />
+                    <Plain isRotating={isRotating} scale={plainScale} position={plainPosition} rotation={[0, 20, 0]} />
                 </Suspense>
             </Canvas>
         </section>
